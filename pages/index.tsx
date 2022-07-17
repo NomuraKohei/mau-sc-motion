@@ -47,15 +47,29 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title> Motions of Onomatopoeia - NOMURA</title>
-        <meta name="description" content="Animations - Multimedia Fundamentals" />
+        <title>Motions of Onomatopoeia</title>
+        <meta name="description" content="擬音をアニメーションにしてみました。" />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Motions of Onomatopoeia" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="擬音をアニメーションにしてみました。" />
+        <meta property="og:url" content="https://mau-sc-motion.vercel.app/" />
+        <meta property="og:image" content="https://mau-sc-motion.vercel.app/ogp.jpg" />
+        <meta property="og:site_name" content="Motions of Onomatopoeia" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Motions of Onomatopoeia" />
+        <meta name="twitter:description" content="擬音をアニメーションにしてみました。" />
+        <meta name="twitter:image" content="https://mau-sc-motion.vercel.app/ogp.jpg" />
+        <meta name="twitter:url" content="https://mau-sc-motion.vercel.app/" />
       </Head>
 
       <main className={styles.main} ref={scrollRef}>
-        <h1 className={styles.title}>
-          Motions of Onomatopoeia
-        </h1>
+        <section className={styles.title}>
+          <h1>
+            Motions of Onomatopoeia
+          </h1>
+          <small>Created by NOMURA</small>
+        </section>
         <MotionSection animationData={data1} title="スゥーーふぁーー" width={100} height={100} top={70} left={245} />
         <div className={styles.indicate}>
           <MotionSection animationData={data2} title="パーン" width={105} height={105} top={90} left={140} isHalf />
@@ -68,9 +82,9 @@ const Home: NextPage = () => {
         <div className={styles.scroll}>
           {
             isScrollUpper ?
-              <Image src={scrollUpperImg} alt="スクロールアローの画像" />
+              <Image src={scrollUpperImg} alt="スクロールアローの画像" width={48} height={25} />
               :
-              <Image src={scrollDownImg} alt="スクロールアローの画像" />
+              <Image src={scrollDownImg} alt="スクロールアローの画像" width={48} height={25} />
           }
         </div>
       </main>

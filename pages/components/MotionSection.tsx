@@ -14,7 +14,12 @@ interface Props {
 }
 
 const MotionSection: React.FC<Props> = props => {
+  const [isTap, setIsTap] = useState(false)
   const [stop, setStop] = useState(true);
+
+  const clickHandler = () => {
+    setIsTap(true)
+  }
 
   const defaultOptions = {
     loop: false,
@@ -27,7 +32,7 @@ const MotionSection: React.FC<Props> = props => {
 
   return (
     <section>
-      <h2>{props.title}</h2>
+      <h2 className={styles.motionTitle}>{props.title}</h2>
       <div className={props.isHalf ? styles.lottieHalf : styles.lottie}>
         <Lottie
           options={defaultOptions}
@@ -35,9 +40,8 @@ const MotionSection: React.FC<Props> = props => {
           width="100%"
           isStopped={stop}
           isClickToPauseDisabled
-          ariaRole={''}
         />
-        <button onMouseOver={() => setStop(false)} onMouseLeave={() => setStop(true)} className={props.isRect ? `${styles.lottieButton} ${styles.lottieButtonRectangle}` : styles.lottieButton} style={{ width: props.width, height: props.height, top: props.top, left: props.left }}></button>
+        <button onClick={clickHandler} aria-label={`${props.title}のアニメーションを動かす`} onMouseOver={() => setStop(false)} onMouseLeave={() => setStop(true)} className={props.isRect ? isTap ? `${styles.lottieButton} ${styles.lottieButtonRectangle}` : `${styles.lottieButton} ${styles.lottieButtonRectangle} ${styles.lottieButtonShow}` : isTap ? styles.lottieButton : `${styles.lottieButton} ${styles.lottieButtonShow}`} style={{ width: props.width, height: props.height, top: props.top, left: props.left }} >{isTap ? '' : 'Tap'}</button>
       </div>
     </section>
   )

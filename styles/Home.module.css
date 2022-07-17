@@ -27,3 +27,22 @@
   right: 40px;
   bottom: 20px;
 }
+
+@media screen and (max-width: 839px){
+  .main {
+    padding: 2em 0em 8em;
+  }
+
+  .indicate {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .scroll {
+    display: none;
+  }
+
+  .title {
+    padding: 0 1rem;
+  }
+}
