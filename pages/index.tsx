@@ -23,7 +23,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Motions fo Onomatopoeia
+          Motions of Onomatopoeia
         </h1>
         <MotionSection animationData={data1} title="スゥーーふぁーー" width={100} height={100} top={70} left={245} />
         <div className={styles.indicate}>
