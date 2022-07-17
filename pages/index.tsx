@@ -9,11 +9,40 @@ import data4 from '../public/data4.json';
 import data5 from '../public/data5.json';
 import data6 from '../public/data6.json';
 import data7 from '../public/data7.json';
-import scrollImg from '../public/scroll.svg'
+import scrollDownImg from '../public/scroll_down.svg'
+import scrollUpperImg from '../public/scroll_upper.svg'
 import MotionSection from './components/MotionSection';
+import { useEffect, useRef, useState } from 'react';
 
 
 const Home: NextPage = () => {
+
+  const [isScrollUpper, SetIsScrollUpper] = useState(false)
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const judgeScrollBottom = () => {
+
+    const winScrollMaxY = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    if (window.scrollY >= winScrollMaxY - 10) {
+      console.log('true')
+      SetIsScrollUpper(true)
+    } else {
+      SetIsScrollUpper(false)
+    }
+  }
+
+  useEffect(() => {
+    if (!scrollRef) {
+      return
+    }
+
+    window.addEventListener('scroll', judgeScrollBottom)
+
+    return () => {
+      window.removeEventListener('scroll', judgeScrollBottom)
+    }
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -23,7 +52,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.main} ref={scrollRef}>
         <h1 className={styles.title}>
           Motions of Onomatopoeia
         </h1>
@@ -37,7 +66,12 @@ const Home: NextPage = () => {
           <MotionSection animationData={data7} title="ペチャッ" width={70} height={70} top={83} left={155} isHalf />
         </div>
         <div className={styles.scroll}>
-          <Image src={scrollImg} alt="スクロールアローの画像" />
+          {
+            isScrollUpper ?
+              <Image src={scrollUpperImg} alt="スクロールアローの画像" />
+              :
+              <Image src={scrollDownImg} alt="スクロールアローの画像" />
+          }
         </div>
       </main>
     </div>
