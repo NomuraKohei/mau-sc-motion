@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import data1 from '../public/data1.json';
 import data2 from '../public/data2.json';
@@ -8,6 +9,7 @@ import data4 from '../public/data4.json';
 import data5 from '../public/data5.json';
 import data6 from '../public/data6.json';
 import data7 from '../public/data7.json';
+import scrollImg from '../public/scroll.svg'
 import MotionSection from './components/MotionSection';
 
 
@@ -33,6 +35,9 @@ const Home: NextPage = () => {
           <MotionSection animationData={data5} title="パリン" width={120} height={115} top={69} left={140} isHalf isRect />
           <MotionSection animationData={data6} title="ガッチン" width={120} height={115} top={20} left={133} isHalf isRect />
           <MotionSection animationData={data7} title="ペチャッ" width={70} height={70} top={83} left={155} isHalf />
+        </div>
+        <div className={styles.scroll}>
+          <Image src={scrollImg} alt="スクロールアローの画像" />
         </div>
       </main>
     </div>
