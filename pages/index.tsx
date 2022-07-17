@@ -9,8 +9,8 @@ import data4 from '../public/data4.json';
 import data5 from '../public/data5.json';
 import data6 from '../public/data6.json';
 import data7 from '../public/data7.json';
-import scrollDownImg from '../public/scroll_down.svg'
-import scrollUpperImg from '../public/scroll_upper.svg'
+import scrollDownImg from '../public/scroll_down.png'
+import scrollUpperImg from '../public/scroll_upper.png'
 import MotionSection from './components/MotionSection';
 import { useEffect, useRef, useState } from 'react';
 
@@ -82,9 +82,9 @@ const Home: NextPage = () => {
         <div className={styles.scroll}>
           {
             isScrollUpper ?
-              <Image src={scrollUpperImg} alt="スクロールアローの画像" width={48} height={25} />
+              <Image src={scrollUpperImg} alt="スクロールアローの画像" width={44} height={24} />
               :
-              <Image src={scrollDownImg} alt="スクロールアローの画像" width={48} height={25} />
+              <Image src={scrollDownImg} alt="スクロールアローの画像" width={44} height={24} />
           }
         </div>
       </main>
