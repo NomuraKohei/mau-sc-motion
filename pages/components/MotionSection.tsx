@@ -18,6 +18,12 @@ const MotionSection: React.FC<Props> = props => {
   const [stop, setStop] = useState(true);
 
   const clickHandler = () => {
+    setStop(false)
+    setIsTap(true)
+  }
+
+  const onHoverHandler = () => {
+
     setIsTap(true)
   }
 
@@ -41,7 +47,7 @@ const MotionSection: React.FC<Props> = props => {
           isStopped={stop}
           isClickToPauseDisabled
         />
-        <button onClick={clickHandler} aria-label={`${props.title}のアニメーションを動かす`} onMouseOver={() => setStop(false)} onMouseLeave={() => setStop(true)} className={props.isRect ? isTap ? `${styles.lottieButton} ${styles.lottieButtonRectangle}` : `${styles.lottieButton} ${styles.lottieButtonRectangle} ${styles.lottieButtonShow}` : isTap ? styles.lottieButton : `${styles.lottieButton} ${styles.lottieButtonShow}`} style={{ width: props.width, height: props.height, top: props.top, left: props.left }} >{isTap ? '' : 'Tap'}</button>
+        <button onClick={clickHandler} aria-label={`${props.title}のアニメーションを動かす`} onMouseOver={clickHandler} onMouseLeave={() => setStop(true)} className={props.isRect ? isTap ? `${styles.lottieButton} ${styles.lottieButtonRectangle}` : `${styles.lottieButton} ${styles.lottieButtonRectangle} ${styles.lottieButtonShow}` : isTap ? styles.lottieButton : `${styles.lottieButton} ${styles.lottieButtonShow}`} style={{ width: props.width, height: props.height, top: props.top, left: props.left }} >{isTap ? '' : 'TAP or HOVER'}</button>
       </div>
     </section>
   )
