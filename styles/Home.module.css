@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 0 2em;
+  overflow: scroll;
+}
+
+.title {
+  margin-bottom: 4rem;
+}
+
+.indicate {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
