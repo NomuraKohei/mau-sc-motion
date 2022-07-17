@@ -6,7 +6,6 @@
 .main {
   min-height: 100vh;
   padding: 2em 2em 4em;
-  overflow: scroll;
   position: relative;
 }
 
