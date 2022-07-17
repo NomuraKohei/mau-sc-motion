@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title> Motions fo Onomatopoeia - NOMURA</title>
+        <title> Motions of Onomatopoeia - NOMURA</title>
         <meta name="description" content="Animations - Multimedia Fundamentals" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Motions fo Onomatopoeia
         </h1>
-        <MotionSection animationData={data1} title="スゥーーふぁー" width={100} height={100} top={70} left={245} />
+        <MotionSection animationData={data1} title="スゥーーふぁーー" width={100} height={100} top={70} left={245} />
         <div className={styles.indicate}>
           <MotionSection animationData={data2} title="パーン" width={105} height={105} top={90} left={140} isHalf />
           <MotionSection animationData={data3} title="ボヨーン" width={55} height={55} top={20} left={155} isHalf />
