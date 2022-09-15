@@ -61,6 +61,7 @@ const Home: NextPage = () => {
         <meta name="twitter:description" content="擬音をアニメーションにしてみました。" />
         <meta name="twitter:image" content="https://mau-sc-motion.vercel.app/ogp.jpg" />
         <meta name="twitter:url" content="https://mau-sc-motion.vercel.app/" />
+        <meta name="google-site-verification" content="5Gftc4vNKAIuoIrcUC3dNvJZ7igr5f64K_5bGrcGDqs" />
       </Head>
 
       <main className={styles.main} ref={scrollRef}>
